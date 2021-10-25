@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>board.html</title>
+    <style>
+        input[type="datetime"] {
+            width: 100px;
+        }
+
+        table {
+            border-style: double;
+        }
+
+        th {
+            margin: 2px;
+            border-style: groove;
+            background-color: cornflowerblue;
+            color: cornsilk;
+            display: inline-block;
+        }
+
+        td {
+            border-style: ridge;
+        }
+        #mainSearch>input{
+            width: 150px;
+            height: 40px;
+            margin: 5px 35%;
+            background-color: royalblue;
+            color: whitesmoke;
+            font-size: 20px;
+        }
+
+        tr>td:nth-child(1){ 
+            background-color: tomato;
+            text-align: center;
+        }
+        tr>td:nth-child(3){
+            background-color: sandybrown;
+            text-align: center;
+        }
+        tr>td>button:nth-of-type(1){
+            background-color: aqua;
+        }
+
+        tr>td>button:nth-last-of-type(1){
+            background-color: blueviolet;
+        }
+        tr:nth-child(2n){
+            color: red;
+        }
+        #attachment {
+            color: crimson;
+        }
+       
+    </style>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <form>
+        <section>
+            <article>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <h4>게시글 검색</h4>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>게시글 등록일</td>
+                            <td colspan="3">
+                                <input type="datetime" style='background-color: darkcyan' name="today">
+                                <input type="date">
+                                <input type="datetime" name="today">
+                                <input type="date">
+                                <button type="button" onclick="alert('오늘')">오늘</button>
+                                <button type="button" onclick="alert('어제')">어제</button>
+                                <button type="button" onclick="alert('3일')">3일</button>
+                                <button type="button" onclick="alert('7일')">7일</button>
+                                <button type="button" onclick="alert('한달')">한달</button>
+                                <input type="reset" value="초기화">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>게시판 선택</td>
+                            <td colspan="3"><select name="select board1">
+                                    <option value="1" selected>상품 후기 게시판</option>
+                                    <option value="2">안내사항</option>
+                                    <option value="3">다른상품보기</option>
+                                </select>
+                                <select name="select board2">
+                                    <option value="1" selected>전체</option>
+                                    <option value="2">?</option>
+                                    <option value="3">??</option>
+                                </select>
+                                <select name="select board3">
+                                    <option value="1" selected>스팸글 포함(전체)</option>
+                                    <option value="2">???</option>
+                                    <option value="3">????</option>
+                                </select>
+                                <input type="radio" name="display" checked>전체
+                                <input type="radio" name="display">진열
+                                <input type="radio" name="display">미진열
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>답변/댓글 여부</td>
+                            <td><select name="comment">
+                                    <option value="1" selected>전체</option>
+                                    <option value="2">댓글1</option>
+                                    <option value="3">댓글2</option>
+                                </select></td>
+                            <td>첨부파일 여부</td>
+                            <td id='attachment'><input type="radio" name="plus file" checked>전체
+                                <input type="radio" name="plus file">있음
+                                <input type="radio" name="plus file">없음</td>
+                        </tr>
+                        <tr>
+                            <td>게시글 검색</td>
+                            <td><select name="search board">
+                                    <option value="1" selected>이름</option>
+                                    <option value="2">제목</option>
+                                    <option value="3">날짜</option>
+                                </select>
+                                <input type="text" name="search" autocomplete="on">
+                            </td>
+                            <td>노출조건 선택</td>
+                            <td> <select name="exposed board">
+                                    <option value="1" selected>전체 게시글</option>
+                                    <option value="2">작성자</option>
+                                    <option value="3">제목</option>
+                                </select>
+                                <input type="checkbox" name="exposed">답변글 노출</td>
+                        </tr>
+                        <tr>
+                            <td>상품명 검색</td>
+                            <td colspan="3"><select name="search item">
+                                    <option value="1" selected>상품명</option>
+                                    <option value="2">판매자</option>
+                                    <option value="3">가격</option>
+                                </select>
+                                <input type="text" name="item" autocomplete="on">
+                                <button type="button" onclick="alert(검색안됨)">상품검색</button>
+                                <input type="reset" value="비우기">(상품명 게시글 검색은 상품QnA, 상품리뷰 게시판 선택시 사용가능)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>별점 조건</td>
+                            <td colspan="3"><input type="radio" name="item star1" checked>전체 리뷰
+
+                                <select name="delivery">
+                                    <option value="1" selected>배송</option>
+                                    <option value="2">가격</option>
+                                    <option value="3">품질</option>
+                                </select>
+                                <input type="radio" name="item star" checked>★★★★★
+                                <input type="radio" name="item star">★★★★
+                                <input type="radio" name="item star">★★★
+                                <input type="radio" name="item star">★★
+                                <input type="radio" name="item star">★
+                                (리뷰 게시판에서만 검색 가능합니다.)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>회원 구분</td>
+                            <td>
+                                <input type="radio" name="client" checked>전체
+                                <input type="radio" name="client">회원
+                                <input type="radio" name="client">비회원
+                            </td>
+                            <td>유입 경로</td>
+                            <td>
+                                <input type="radio" name="comefrom" checked>전체
+                                <input type="radio" name="comefrom">웹
+                                <input type="radio" name="comefrom">모바일
+                                <input type="radio" name="comefrom">네이버 페이
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>목록 추천 조건</td>
+                            <td colspan="3">
+                                <input type="radio" name="recommend" checked>선택안함
+                                <input type="radio" name="recommend">추천목록1
+                                <input type="radio" name="recommend">추천목록2
+                                <input type="radio" name="recommend">추천목록3
+                                (리뷰/QnA 게시판에서만 검색 가능합니다.)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>게시판 url</td>
+                            <td><b>/board/board.html?cod=psj1201_board2</b>
+                                <button type="button" onclick="alert(검색안됨)">주소복사</button>
+                                <button type="button" onclick="alert(검색안됨)">미리보기</button>
+                            </td>
+                            <td>정렬</td>
+                            <td> <input type="radio" name="array" checked>게시글순
+                                <input type="radio" name="array">글 등록순</td>
+                        </tr>
+                        <tr>
+                            <td>적립금</td>
+                            <td colspan="3"><input type="radio" name="point" checked>전체
+                                <input type="radio" name="point">지급
+                                <input type="radio" name="point">미지급(비회원제외)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id='mainSearch'>
+                    <input type="submit" value="검 색 ▶">
+                </div>
+            </article>
+        </section>
+    </form>
+</body>
+
+</html>
