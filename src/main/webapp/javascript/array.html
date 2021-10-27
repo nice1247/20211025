@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array.html</title>
+    <style>
+        tr:nth-of-type(1) {
+            background-color: gray;
+            color: wheat;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        tbody>tr:nth-of-type(2n) {
+            background-color: yellow;
+        }
+        img{
+            width: 70px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var subject = {
+            name: '이름',
+            age: '나이',
+            score: '점수',
+            photo: '사진'
+        }
+        var person1 = {
+            name: '홍길동',
+            age: 20,
+            score: 80,
+            image: '3.PNG'
+        };
+        var person2 = {
+            name: '김민수',
+            age: 23,
+            score: 85,
+            image: '4.PNG'
+        }
+        var person3 = {
+            name: '홍성민',
+            age: 25,
+            score: 88,
+            image: '5.PNG'
+        }
+
+        var objAry = [subject, person1, person2, person3];
+        document.write('<table border="3" width="300px" height="130px"><thead>HI</thead><tbody>');
+        for (var i = 0; i < objAry.length; i++) {
+            document.write('<tr>')
+            for (var field in objAry[i]) {
+                if (field == 'image') {
+                    document.write('<td><img src="' + objAry[i][field] + '"></td>')
+                } else {
+                    document.write('<td>' + `${objAry[i][field]}` + '</td>');
+                }
+            }
+            document.write('</tr>')
+        };
+        document.write('</tbody></table>');
+        // for (var i = 0; i < objAry.length; i++) {
+        //     // console.log(`name: ${objAry[i].name}, age: ${objAry[i].age}`);
+        //     // console.log(`${i+1}번째 데이터 -------`)
+        //     for(var field in objAry[i]){
+        //         console.log(`${field}, ${objAry[i][field]}`);
+        //     }
+        // }
+    </script>
+
+</body>
+
+</html>

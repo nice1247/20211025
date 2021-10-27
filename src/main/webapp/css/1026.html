@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/1026.html</title>
+    <style>
+        html{
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 8px;
+        }
+        .title {
+            background-color: rgb(37, 37, 37);
+            color: white;
+            float: left;
+            width: 96%;
+            padding: 0% 2%;
+            height: fit-content;
+        }
+        header>div>p{
+            float:right;
+            padding-left: 7px;
+        }
+        header a:visited{
+            color: white;
+        }
+        #tname{
+            float:left;
+        }
+        header p:hover {
+            font-style: italic;
+
+        }
+       
+
+        leftmenu>div {
+            box-sizing: border-box;
+            float: left;
+
+            text-align: center;
+            margin-top: 16px;
+            margin: 16px 20px 16px;
+        }
+
+        #boardblock {
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        leftmenu p {
+            border: 1px solid rgba(0, 0, 0, 0.493);
+            text-align: center;
+            width: 130px;
+            height: 35px;
+            margin: 0px;
+            padding-top: 10px;
+        }
+        leftmenu p:hover{
+            font-style: italic;
+            background-color: rgb(227, 233, 251);
+        }
+        leftmenu p>a{
+            color: black;
+        }
+        
+        #textblock{
+            float:left;
+            border: 1.5px solid black;
+            border-radius: 5px;
+            padding: 15px 17px 15px 10px;
+            margin: 10px 5px;
+            width: 75%;
+        }
+        #button1{
+            background-color: grey;
+            color: white;
+            border-radius: 3px;
+        }
+        textarea{
+            color: rgb(158, 158, 158);
+            width: 100%;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class='title'>
+            <p id='tname'>Codevang's Page</p>
+            <p><a href=''>회원정보</p>
+            <p><a href=''>로그아웃</a></p>
+            <p><a href=''>홈</a></p>
+        </div>
+        
+    </header>
+    <leftmenu>
+        <div><b>
+                <h3>Category</h3>
+            </b>
+            <div id='boardblock'>
+                <p><a href=''>게시판</a></p>
+                <p><a href=''>일반 게시판</a></p>
+                <p><a href=''>코딩 게시판</a></p>
+            </div>
+        </div>
+    </leftmenu>
+    <rightmenu>
+        <div id='textblock'>
+        <textarea rows="1" cols=auto placeholder="제목을 입력해주세요."></textarea>
+        <p></p>
+        <textarea rows="16" cols=auto placeholder="내용을 입력해주세요."></textarea>
+        <p></p>
+        <button type="submit" id='button1'>제출하기</button>
+    </div>
+    </rightmenu>
+</body>
+
+</html>
